@@ -13,4 +13,6 @@ RUN apt-get update && apt-get install -y curl libcurl4-openssl-dev libssl-dev li
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+
+CMD ["php-fpm"]
+#CMD ["nginx", "-g", "daemon off;"]

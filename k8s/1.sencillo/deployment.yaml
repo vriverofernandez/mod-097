@@ -5,8 +5,9 @@ metadata:
   name: web-server
   labels: 
     app: nginx
+    env: test
 spec:
-  replicas: 2
+  replicas: 3
   selector: 
     matchLabels: 
       app: nginx

@@ -1,0 +1,45 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: example
+  namespace: test
+  uid: b5d147e7-8291-424e-a171-ff4ec5cb28e9
+  resourceVersion: '48679'
+  creationTimestamp: '2024-04-09T15:36:53Z'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: v1
+      time: '2024-04-09T15:38:52Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:internalTrafficPolicy': {}
+          'f:ports':
+            .: {}
+            'k:{"port":80,"protocol":"TCP"}':
+              .: {}
+              'f:port': {}
+              'f:protocol': {}
+              'f:targetPort': {}
+          'f:selector': {}
+          'f:sessionAffinity': {}
+          'f:type': {}
+spec:
+  clusterIP: 10.217.5.28
+  ipFamilies:
+    - IPv4
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  internalTrafficPolicy: Cluster
+  clusterIPs:
+    - 10.217.5.28
+  type: ClusterIP
+  ipFamilyPolicy: SingleStack
+  sessionAffinity: None
+  selector:
+    app: deploy-test
+status:
+  loadBalancer: {}

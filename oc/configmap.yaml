@@ -1,0 +1,22 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: cm-test
+  namespace: test
+  uid: 7aa943d0-6bed-45c5-8b53-a3c878c937aa
+  resourceVersion: '47351'
+  creationTimestamp: '2024-04-09T15:32:10Z'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: v1
+      time: '2024-04-09T15:32:10Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:data':
+          .: {}
+          'f:color': {}
+        'f:immutable': {}
+immutable: false
+data:
+  color: red

@@ -1,0 +1,53 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: prueba
+  namespace: test
+  uid: cf89500b-d86d-4e40-adbd-fdaf42a7697a
+  resourceVersion: '49684'
+  creationTimestamp: '2024-04-09T15:45:37Z'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2024-04-09T15:45:37Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:host': {}
+          'f:port':
+            .: {}
+            'f:targetPort': {}
+          'f:to':
+            'f:kind': {}
+            'f:name': {}
+            'f:weight': {}
+          'f:wildcardPolicy': {}
+    - manager: openshift-router
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2024-04-09T15:45:37Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:ingress': {}
+      subresource: status
+spec:
+  host: prueba-test.apps-crc.testing
+  to:
+    kind: Service
+    name: example
+    weight: 100
+  port:
+    targetPort: 8080
+  wildcardPolicy: None
+status:
+  ingress:
+    - host: prueba-test.apps-crc.testing
+      routerName: default
+      conditions:
+        - type: Admitted
+          status: 'True'
+          lastTransitionTime: '2024-04-09T15:45:37Z'
+      wildcardPolicy: None
+      routerCanonicalHostname: router-default.apps-crc.testing

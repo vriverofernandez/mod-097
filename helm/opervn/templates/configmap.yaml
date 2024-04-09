@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  name: {{ .Values.configmap.name }}
+data:
+{{- if .Values.configmap.color.key }}
+  {{ .Values.configmap.color.key }} : {{ .Values.configmap.color.value }}
+{{- end }}
+{{- if .Values.configmap.altura.key }}
+  {{ .Values.configmap.altura.key }} : {{ .Values.configmap.altura.value }}
+{{- end }}
+{{- if .Values.configmap.peso.key }}
+  {{ .Values.configmap.peso.key }} : {{ .Values.configmap.peso.value }}
+{{- end }}
+
+{{- range $i, $value := .Values.configmap.valores  }}
+  {{ $value.key }} : {{ $value.value }}
+{{- end }}
